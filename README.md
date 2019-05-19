@@ -1,6 +1,6 @@
 # PowerPointToVideo
 
-PowerPoint slide show to MP4 video converter with synthesized interlocutor voice.
+PowerPoint to MP4 converter with synthesized interlocutor voice.
 
 ## Users
 
