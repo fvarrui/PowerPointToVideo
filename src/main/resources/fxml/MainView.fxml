@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<BorderPane fx:id="generatePane" prefWidth="640.0">
+			<center>
+				<GridPane hgap="5.0" BorderPane.alignment="CENTER">
+					<columnConstraints>
+						<ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="10.0" />
+						<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+						<ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+					</rowConstraints>
+					<children>
+						<Label text="Input:" />
+						<TextField fx:id="inputTextField" promptText="PPTX file to convert" GridPane.columnIndex="1" />
+						<Button fx:id="chooseInputButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onChooseInputAction" text="..." GridPane.columnIndex="2">
+							<graphic>
+								<ImageView pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/folder-icon.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Button>
+						<Label text="Output:" GridPane.rowIndex="1" />
+						<TextField fx:id="outputTextField" promptText="Generated MP4 video file" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+						<Button fx:id="chooseOutputButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onChooseOutputAction" text="..." GridPane.columnIndex="2" GridPane.rowIndex="1">
+							<graphic>
+								<ImageView pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/folder-icon.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Button>
+					</children>
+				</GridPane>
+			</center>
+			<bottom>
+				<VBox BorderPane.alignment="CENTER">
+					<BorderPane.margin>
+						<Insets />
+					</BorderPane.margin>
+					<children>
+						<HBox alignment="CENTER">
+							<children>
+								<Button fx:id="generateButton" defaultButton="true" mnemonicParsing="false" onAction="#onGenerateVideoAction" text="Generate video">
+									<graphic>
+										<ImageView pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../images/mp4-icon.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Button>
+							</children>
+							<padding>
+								<Insets top="5.0" />
+							</padding>
+						</HBox>
+						<HBox alignment="CENTER" spacing="5.0">
+							<children>
+								<Label text="Developed with" />
+								<ImageView pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/heart-icon.png" />
+									</image>
+								</ImageView>
+								<Label text="by" />
+								<Hyperlink fx:id="developerLink" onAction="#onDeveloperLinkAction" style="-fx-padding: 0;" text="\@fvarrui" />
+								<Label text="// Powered by" />
+								<Hyperlink fx:id="balabolkaLink" onAction="#onBalabolkaLinkAction" style="-fx-padding: 0;" text="Balabolka" />
+								<Label text="and" />
+								<Hyperlink fx:id="ffmpegLink" onAction="#onFfmpegLinkAction" style="-fx-padding: 0;" text="ffmpeg" />
+							</children>
+							<padding>
+								<Insets top="5.0" />
+							</padding>
+						</HBox>
+					</children>
+				</VBox>
+			</bottom>
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</padding>
+		</BorderPane>
+		<GridPane fx:id="loadingPane" alignment="CENTER" style="-fx-background-color: rgba(0,0,0,0.5);" visible="false">
+			<columnConstraints>
+				<ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" vgrow="NEVER" />
+			</rowConstraints>
+			<children>
+				<VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+					<children>
+						<Label fx:id="progressLabel" alignment="CENTER" prefWidth="300.0" text="-" />
+						<ProgressBar fx:id="progressBar" prefWidth="300.0" progress="0.0" />
+						<Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#onCancelAction" text="Cancel" />
+					</children>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+				</VBox>
+			</children>
+		</GridPane>
+	</children>
+</StackPane>

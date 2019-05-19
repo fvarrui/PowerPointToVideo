@@ -1,0 +1,5 @@
+/bin/
+/target/
+/balcon/
+/ffmpeg/
+**/*.mp4
