@@ -13,6 +13,7 @@
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.source>11</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
@@ -82,7 +83,7 @@
 							<url>https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-20190518-c61d16c-win64-shared.zip</url>
 							<unpack>true</unpack>
 							<outputDirectory>${project.basedir}</outputDirectory>
-							<md5>100B55A2F13C11B019FA8E8CCCE644A7</md5>
+							<md5>100b55a2f13c11b019fa8e8ccce644a7</md5>
 						</configuration>
 					</execution>
 					<execution>
@@ -95,7 +96,7 @@
 							<url>http://balabolka.site/balcon.zip</url>
 							<unpack>true</unpack>
 							<outputDirectory>${project.basedir}/balcon</outputDirectory>
-							<md5>4F3AD67483D5315FA3E213293248CEAF</md5>
+							<md5>4f3ad67483d5315fa3e213293248ceaf</md5>
 						</configuration>
 					</execution>
 				</executions>
