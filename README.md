@@ -20,7 +20,7 @@ PowerPointToSlide generate a MP4 video from a PPTX file, speeching the slides no
 
    > :warning: Remember that your PPTX file must include notes in each slide, which will be spoken by the speech synthesizer.
 
-4. Push Generate and wait until it finish.
+4. Push  `Generate video` button and wait until it finish.
 
    ![](docs/images/screenshot-03.png)
 
