@@ -166,6 +166,7 @@
 						<configuration>
 							<mainClass>fvarrui.pptx2video.Main</mainClass>
 							<bundleJre>true</bundleJre>
+							<generateInstaller>true</generateInstaller>
 							<additionalResources>
 								<param>balcon</param>
 								<param>ffmpeg</param>
@@ -173,7 +174,6 @@
 							<organizationName>fvarrui</organizationName>
 							<organizationUrl>https://github.com/fvarrui</organizationUrl>
 							<url>https://github.com/fvarrui/PowerPointToVideo</url>
-							<generateInstaller>false</generateInstaller>
 						</configuration>
 					</execution>
 				</executions>
