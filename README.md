@@ -4,7 +4,7 @@ PowerPoint to MP4 converter with synthesized interlocutor voice.
 
 ## Users
 
-PowerPointToSlide generate a MP4 video from a PPTX file, speeching the slides notes with a synthetisized voice while they are showed.
+**PowerPointToVideo** generate a MP4 video from a PPTX file, speeching the slides notes with a synthetisized voice while they are showed.
 
 1. [Download](https://github.com/fvarrui/PowerPointToVideo/releases/download/v0.0.1/PowerPointToVideo_0.0.1.exe) and install PowerPointToVideo.
 
