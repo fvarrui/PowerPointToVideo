@@ -8,7 +8,7 @@
 	<version>0.0.2</version>
 
 	<name>PowerPointToVideo</name>
-	<description>PowerPoint slide show to MP4 video converter with synthesized interlocutor voice</description>
+	<description>PowerPoint to MP4 converter with synthesized interlocutor voice</description>
 
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
