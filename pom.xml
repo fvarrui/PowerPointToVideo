@@ -5,7 +5,7 @@
 
 	<groupId>fvarrui.pptx2video</groupId>
 	<artifactId>PowerPointToVideo</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 
 	<name>PowerPointToVideo</name>
 	<description>PowerPoint slide show to MP4 video converter with synthesized interlocutor voice</description>

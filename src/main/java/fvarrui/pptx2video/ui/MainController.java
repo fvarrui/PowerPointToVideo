@@ -101,6 +101,7 @@ public class MainController implements Initializable {
 		
 		generatePane.disableProperty().bind(loadingPane.visibleProperty());
 		
+		loadingPane.setVisible(false);
 	}
 
 	public Parent getRoot() {

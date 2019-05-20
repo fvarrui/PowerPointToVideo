@@ -13,7 +13,7 @@ public class ProcessUtils {
 	public static String execute(File workingDirectory, String executable, Object... arguments)
 			throws CommandLineException, IOException {
 		StringBuffer outputBuffer = new StringBuffer();
-
+		
 		Commandline command = new Commandline();
 		command.setWorkingDirectory(workingDirectory);
 		command.setExecutable(executable);

@@ -104,7 +104,7 @@
 				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 			</padding>
 		</BorderPane>
-		<GridPane fx:id="loadingPane" alignment="CENTER" style="-fx-background-color: rgba(0,0,0,0.5);" visible="false">
+		<GridPane fx:id="loadingPane" alignment="CENTER" style="-fx-background-color: rgba(0,0,0,0.5);">
 			<columnConstraints>
 				<ColumnConstraints hgrow="NEVER" minWidth="10.0" />
 			</columnConstraints>
@@ -112,7 +112,7 @@
 				<RowConstraints minHeight="10.0" vgrow="NEVER" />
 			</rowConstraints>
 			<children>
-				<VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+				<VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(two-pass-box , black, 20, 0.0, 0, 0);">
 					<children>
 						<Label fx:id="progressLabel" alignment="CENTER" prefWidth="300.0" text="-" />
 						<ProgressBar fx:id="progressBar" prefWidth="300.0" progress="0.0" />

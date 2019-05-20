@@ -28,6 +28,7 @@ public class ConvertionTask extends SteppedTask {
 			data -> {
 				File tempDir = Files.createTempDirectory("pptx2video_").toFile();
 				tempDir.mkdir();
+				System.out.println("Temporary dir created: " + tempDir);
 				data.put("tempDir", tempDir);
 			}
 		);
@@ -37,6 +38,7 @@ public class ConvertionTask extends SteppedTask {
 				File tempDir = (File) data.get("tempDir");
 				String pptx = inputFile.getAbsolutePath();
 				List<File> slides = PowerPointUtils.extractImages(pptx, tempDir);
+				System.out.println("Extracted slides: " + slides);				
 				data.put("slides", slides);
 			}
 		);
@@ -45,6 +47,7 @@ public class ConvertionTask extends SteppedTask {
 				File inputFile = (File) data.get("input");
 				String pptx = inputFile.getAbsolutePath();
 				List<String> notes = PowerPointUtils.extractNotes(pptx);
+				System.out.println("Extracted notes: " + notes);				
 				data.put("notes", notes);
 			}
 		);
@@ -53,6 +56,7 @@ public class ConvertionTask extends SteppedTask {
 				List<String> notes = (List<String>) data.get("notes");
 				File tempDir = (File) data.get("tempDir");				
 				List<File> speeches = TextToSpeech.textsToWav(notes, tempDir);
+				System.out.println("Generated speeches: " + speeches);				
 				data.put("speeches", speeches);
 			}
 		);
@@ -62,6 +66,7 @@ public class ConvertionTask extends SteppedTask {
 				List<File> speeches = (List<File>) data.get("speeches");
 				File tempDir = (File) data.get("tempDir");				
 				List<File> videos = VideoUtils.createVideos(slides, speeches, tempDir);
+				System.out.println("Generated videos: " + videos);				
 				data.put("videos", videos);
 			}
 		);
@@ -73,12 +78,14 @@ public class ConvertionTask extends SteppedTask {
 				List<String> lineas = videos.stream().map(v -> "file '" + v + "'").collect(Collectors.toList());
 				FileUtils.write(listFile, StringUtils.join(lineas.toArray(), "\r\n"), Charset.defaultCharset());
 				VideoUtils.mergeVideos(listFile, output);
+				System.out.println("Merged video: " + output);				
 			}
 		);
 		cleanStep = addStep("Removing temporary directory",
 			data -> {
 				File tempDir = (File) data.get("tempDir");				
 				FileUtils.deleteDirectory(tempDir);
+				System.out.println("Temporary dir removed: " + tempDir);
 			}
 		);
 		addStep("Video " + output.getName() + " generation finished");
