@@ -28,19 +28,23 @@ To see the result follow this [link](https://www.youtube.com/watch?v=e9v84aHcUbI
 
 ## Developers
 
-1. Download and install [JavaPackager Maven Plugin](https://github.com/fvarrui/JavaPackager/blob/master/README.md).
-
-2. Download project source code and enter in the project folder:
+1. Download project source code and enter in the project folder:
 
    ```bash
    git clone https://github.com/fvarrui/PowerPointToVideo.git
    cd PowerPointToVideo
    ```
 
-3. Compile and package the project:
+2. Compile and package the project:
 
    ```bash
    mvn package
+   ```
+   
+   Or only download dependencies (included in the last step):
+   
+   ```bash
+   mvn prepare-package
    ```
 
    This generate an EXE installer for Windows in `target` folder.

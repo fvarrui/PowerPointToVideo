@@ -5,7 +5,7 @@
 
 	<groupId>fvarrui.pptx2video</groupId>
 	<artifactId>PowerPointToVideo</artifactId>
-	<version>0.0.2</version>
+	<version>0.3.0</version>
 
 	<name>PowerPointToVideo</name>
 	<description>PowerPoint to MP4 converter with synthesized interlocutor voice</description>
@@ -181,5 +181,15 @@
 
 		</plugins>
 	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>javapackager-repo</id>
+			<url>https://github.com/fvarrui/JavaPackager/raw/master/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>

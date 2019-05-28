@@ -84,7 +84,7 @@ public class ConvertionTask extends SteppedTask {
 		cleanStep = addStep("Removing temporary directory",
 			data -> {
 				File tempDir = (File) data.get("tempDir");				
-				FileUtils.deleteDirectory(tempDir);
+//				FileUtils.deleteDirectory(tempDir);
 				System.out.println("Temporary dir removed: " + tempDir);
 			}
 		);

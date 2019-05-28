@@ -8,6 +8,7 @@ import java.util.List;
 import org.codehaus.plexus.util.cli.CommandLineException;
 
 import fvarrui.pptx2video.utils.ProcessUtils;
+import fvarrui.pptx2video.utils.ResourceUtils;
 
 public class TextToSpeech {
 	
@@ -36,9 +37,14 @@ public class TextToSpeech {
 		int i = 1;
 		for (String text : texts) {
 			File wavFile = new File(destination, "speech-" + i + ".wav");
+			if (!text.isBlank()) {
+				System.out.println(i + ") saving speech to " + wavFile.getName());
+				TextToSpeech.textToWav(text, wavFile);
+			} else {
+				System.out.println(i + ") saving silence to " + wavFile.getName());
+				ResourceUtils.copyResourceToFile("/audio/silence.wav", wavFile);
+			}
 			speeches.add(wavFile);
-			System.out.println(i + ") saving speech to " + wavFile.getName());
-			TextToSpeech.textToWav(text, wavFile);
 			i++;
 		}
 		return speeches;
